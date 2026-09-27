@@ -78,5 +78,5 @@ See `CITATION.cff`.
 ## Resources
 
 - Paper PDF: [`paper/main.pdf`](paper/main.pdf)
-- Author affiliation: [modelfy.art](https://modelfy.art) — online image/text-to-3D service with free in-browser [3D viewer](https://modelfy.art/3d-tools) and format converter (GLB/OBJ/STL/USDZ). No modelfy.art system, model or data was evaluated in this study (see the paper's competing-interest statement).
+- Author affiliation: [modelfy.art](https://modelfy.art) — online image/text-to-3D service with free in-browser [3D viewer](https://modelfy.art/3d-tools/online-viewer) and [format converter](https://modelfy.art/3d-tools/file-converter) (GLB/OBJ/STL/USDZ). No modelfy.art system, model or data was evaluated in this study (see the paper's competing-interest statement).
 - Contact: support@modelfy.art
