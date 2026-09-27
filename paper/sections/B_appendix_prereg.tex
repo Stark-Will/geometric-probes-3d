@@ -1,0 +1,44 @@
+\section{Pre-registration record and deviations}
+\label{app:prereg}
+
+\subsection{What was locked, and when}
+The milestone-1 plan (expert-set comparison on 3D-DefectBench) was committed as git revision 024f7eb on 2026-09-27 at 16:22 UTC+8, before any expert-set probe score was used for evaluation.
+The recorded SHA-256 prefix of that plan is 42280714.
+It fixes the silver-holdout training split, the exclusion of asset 609, the 30-feature logistic regression, the face-count and generator-only controls, the three primary defects, the two negative controls, the 10{,}000-resample asset bootstrap with seed 12345, and Benjamini--Hochberg control over the 36 primary McNemar tests.
+The milestone-2 plan was committed as 78d6623 at 16:44 UTC+8, before MATE-3D scoring, GSO injection and the ablations.
+It fixes the four MATE-3D estimands, the nine primary predictors and their negative sign, the replication rule, the seven injection operators and their target checks, the two GSO operating points, the object bootstrap with seed 2028, and the family ablations.
+The milestone-3 plan was committed as c003104 at 17:36 UTC+8, before Hi3DBench scoring.
+It fixes a secondary analysis of MLLM pseudo-labels, the four predictors named in Section~\ref{sec:hi3d}, and the decision to skip Unique3D for time and disk budget.
+The milestone-3 analysis script was committed as b528343, also before scoring.
+Frozen milestone-1 models were refit only as a reproducibility check; the refit reproduces the milestone-1 thresholds.
+% src: analysis/PREREGISTRATION.md; analysis/PREREGISTRATION_M2.md; analysis/PREREGISTRATION_M3_hi3dbench.md; results/RESULTS_milestone1.md; results/RESULTS_milestone3.md
+
+\subsection{What had already been seen}
+Before the milestone-1 plan we had read the released VLM prediction files, in order to check that our MCC code matches the benchmark authors to three decimal places on all 12 models, and we had counted label prevalences.
+Probe outputs on 11 expert GLBs were inspected as an engineering smoke test, without labels and without a score against labels.
+Before the milestone-2 plan we had seen the head and tail of the MATE-3D ratings table while checking its format, and probe values on the eight meshes of the prompt ``A blue vase'' while testing decimation.
+No correlation between a probe and a rating had been computed, and no injection had been run.
+A further engineering smoke test, one MATE-3D prompt and one GSO object, was run to confirm that the pipeline executed.
+It was not used to choose features, thresholds or severities.
+% src: analysis/PREREGISTRATION.md; analysis/PREREGISTRATION_M2.md
+
+\subsection{Deviations and disclosures}
+The first decimator we tried, \texttt{fast\_simplification}, was rejected before scoring because it broke topology and introduced holes on the blue-vase meshes.
+It was replaced by the PyMeshLab topology-preserving collapse described in Section~\ref{sec:method}.
+That choice is a preprocessing deviation from an earlier engineering attempt, and it was made before any confirmatory statistic.
+System OpenGL libraries were installed during the project so that PyMeshLab would load.
+Probe outputs were compared before and after that installation and were bit-identical.
+Asset 609 remained excluded.
+Unique3D remained excluded from the Hi3DBench plan, before scoring.
+No \(C\), no feature list and no threshold was changed after the expert set, the MATE-3D ratings, the injection outcomes or the Hi3DBench scores were computed.
+
+Two analyses are easier to mistake for confirmatory than they are.
+The single-feature rules for genus, hidden surface, self-intersection, thin walls, dihedral mean and small components were named after the milestone-1 expert AUROCs, and the milestone-2 plan says so.
+Their expert-set numbers are optimistic; the pre-registered external checks are MATE-3D and GSO.
+The topology-only model outscoring the full model is a result on the expert cells.
+It was not used to replace GeomProbe-LR.
+Hi3DBench labels are disclosed in the milestone-3 plan as MLLM pseudo-labels.
+They are not a deviation from a human protocol, because no human protocol was registered for that corpus.
+The scores are reported in Section~\ref{sec:hi3d}.
+They are secondary agreement with an automated judge, not a human validation, and the small within-generator correlations are not a null finding.
+% src: analysis/PREREGISTRATION_M2.md; analysis/PREREGISTRATION_M3_hi3dbench.md; results/RESULTS_milestone2.md; results/RESULTS_milestone3.md

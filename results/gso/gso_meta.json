@@ -1,0 +1,7 @@
+{
+ "n_objects": 120,
+ "probe_failures": [],
+ "skipped": [],
+ "clean_faces_median": 9433.0,
+ "clean_watertight_frac": 0.95
+}

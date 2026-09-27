@@ -1,0 +1,10 @@
+defect,generator,n,n_pos,AUROC
+q_fused_incomplete,model A,49,9,0.7861111111111111
+q_fused_incomplete,model B,52,8,0.5965909090909091
+q_form_surface,model A,45,32,0.7956730769230769
+q_form_surface,model B,43,19,0.6644736842105263
+q_extra_geometry,model A,59,5,0.7851851851851853
+q_extra_geometry,model B,62,1,0.7049180327868853
+q_missing_parts,model A,48,3,0.6074074074074074
+q_missing_parts,model B,56,9,0.541371158392435
+q_pose_placement,model B,65,2,0.5555555555555556

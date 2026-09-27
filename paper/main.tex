@@ -1,0 +1,80 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{hyperref}
+\hypersetup{hidelinks}
+\setlength{\textfloatsep}{8pt plus 2pt minus 2pt}
+\setlength{\floatsep}{8pt plus 2pt minus 2pt}
+\setlength{\intextsep}{8pt plus 2pt minus 2pt}
+\setlength{\abovecaptionskip}{4pt}
+\setlength{\belowcaptionskip}{2pt}
+\setlength{\abovedisplayskip}{6pt plus 2pt minus 2pt}
+\setlength{\belowdisplayskip}{6pt plus 2pt minus 2pt}
+
+\newcommand{\todo}[1]{\textcolor{red}{[TODO: #1]}}
+\makeatletter
+\let\paper@thebibliography\thebibliography
+\renewcommand{\thebibliography}[1]{%
+  \paper@thebibliography{#1}%
+  \raggedright
+}
+\makeatother
+
+\title{Geometric validity is not perceptual quality: what deterministic probes can and cannot measure in generated 3D assets}
+\author{Miles Carter\\
+modelfy.art (\url{https://modelfy.art})\\
+\texttt{support@modelfy.art}}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Geometric validity and perceived quality are different properties of a generated mesh.
+We measured how far deterministic, CPU-only mesh probes (boundaries, components, self-intersection, hidden surface, thin walls, roughness) track each, using expert defect labels, human geometry ratings, MLLM pseudo-labels and defects injected into real scans, in pre-registered analyses.
+Injected holes and floaters were detected perfectly (AUROC 1.000); interpenetrating parts and crossing sheets at 0.940--0.986, hidden shells at 0.811--0.912, thin fins at 0.952 (two larger severities) and vertex noise at 0.753--0.999, although the hidden-surface and self-intersection checks also respond to other defects.
+On 3D-DefectBench expert-agreement cells, a logistic regression on 30 probe features trained only on crowd labels reached a Matthews correlation of 0.272 averaged over three primary geometry defects, against 0.335--0.341 for the best vision-language judges; no paired McNemar test against the four strongest judges was significant, although one bootstrap interval favoured Gemini 3.1 Pro, and form/surface performance was largely explained by generator identity.
+Assets that crowd workers judged defect-free were geometrically dirty, while strict checks fired on undamaged scans.
+Within generators, correlations with MATE-3D human geometry ratings had absolute value at most 0.2; on 2{,}797 Hi3DBench meshes, correlations with an MLLM Geometry Plausibility score were at most 0.111 in absolute value, did not survive adjustment for prompt, and reversed for a geometric-detail score.
+A training-free conjunction of vision-language votes and probe flags raised Matthews correlation in 29 of 36 pairs but was significant in only one.
+Such probes are useful validity gates and confound checks, not perceptual judges.
+\end{abstract}
+\noindent\textbf{Keywords:} 3D generation; mesh quality; geometric validity; vision-language models; defect detection.
+% src: results/macro_mcc.csv; results/RESULTS_milestone1.md; results/RESULTS_milestone2.md; results/RESULTS_milestone3.md; results/gso/gso_detection.csv
+
+\section*{Highlights}
+\begin{itemize}
+  \item Deterministic probes detected injected holes and floaters with AUROC 1.000, and detected self-intersection, hidden shells, thin walls and noise at moderate severity on real scans.
+  \item On expert labels the probe is mid-pack among 12 vision-language models and two controls (macro MCC 0.158 over five geometry defects, rank 8 of 15).
+  \item Assets that crowd workers called defect-free are geometrically dirty, and clean decimated scans already trip strict validity checks.
+  \item Within-generator associations are small for human geometry ratings (absolute Spearman correlation at most 0.2) and smaller for Hi3DBench MLLM pseudo-labels (at most 0.111). The geometric-detail score reverses the sign.
+  \item A training-free conjunction with vision-language votes is directionally consistent and, after correction, significant in 1 of 36 comparisons.
+\end{itemize}
+% src: results/RESULTS_milestone1.md; results/RESULTS_milestone2.md; results/RESULTS_milestone3.md; results/macro_mcc.csv; results/gso/gso_detection.csv
+
+\input{sections/01_introduction}
+\input{sections/02_related}
+\input{sections/03_method}
+\input{sections/04_data}
+\input{sections/05_results}
+\input{sections/06_discussion}
+\input{sections/07_limitations}
+\input{sections/08_conclusion}
+\input{sections/09_backmatter}
+
+\appendix
+\input{sections/A_appendix_probes}
+\input{sections/B_appendix_prereg}
+
+\bibliographystyle{unsrtnat}
+\emergencystretch=2em
+\bibliography{refs}
+
+\end{document}

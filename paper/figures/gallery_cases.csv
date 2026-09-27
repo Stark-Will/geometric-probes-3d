@@ -1,0 +1,11 @@
+case,dataset,path,rule,info
+DB-TP-fused,3D-DefectBench,data/3d-defectbench/glb/golden/1127.glb,3D-DefectBench: experts unanimous 'fused/incomplete'; highest probe score (true positive),"P=0.95 (thr 0.42), model A"
+DB-TP-extra,3D-DefectBench,data/3d-defectbench/glb/golden/87.glb,3D-DefectBench: experts unanimous 'extra geometry'; highest probe score (true positive),"P=0.78 (thr 0.57), model A"
+DB-FP-fused,3D-DefectBench,data/3d-defectbench/glb/golden/993.glb,3D-DefectBench: experts unanimous 'no defect' on all 3 primary defects; highest fused score (false positive),"P=0.81 (thr 0.42), model B"
+DB-FN-form,3D-DefectBench,data/3d-defectbench/glb/golden/70.glb,3D-DefectBench: experts unanimous 'form/surface defect'; lowest probe score (false negative),"P=0.35 (thr 0.44), model B"
+MATE-lowMOS-thin,MATE-3D,data/mate-3d/meshes/latentnerf/A_panda_detective_is_using_a_magnifying_glass_to_examine_an_ancient_scroll/model.obj,MATE-3D: bottom-decile geometry MOS; highest thin_frac_0.005,"MOS=0.21; thin=0.290
+latentnerf"
+MATE-highMOS-probeFP,MATE-3D,data/mate-3d/meshes/one2345++/A_delicious_hamburger/model.obj,MATE-3D: top-decile geometry MOS; highest frozen GeomProbe-LR mean defect score (probe false alarm on a human-preferred mesh),"MOS=7.88; mean P=0.67
+one2345++"
+GSO-clean-selfint,GSO (clean scan),results/gso_meshes/Smith_Hawken_Woven_BasketTray_Organizer_with_3_Compartments_95_x_9_x_13/clean.ply,GSO clean scans: highest self_intersect_face_frac (strict check fires on an undamaged scan),self-int=0.034
+GSO-clean-hidden,GSO (clean scan),results/gso_meshes/Reebok_CL_DIBELLO_II/clean.ply,GSO clean scans: highest hidden_surface_frac,hidden=0.277

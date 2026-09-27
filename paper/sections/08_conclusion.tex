@@ -1,0 +1,13 @@
+\section{Conclusion}
+\label{sec:conc}
+
+Deterministic probes measured the geometric failures we inserted into real scans, and they did not measure perceived quality.
+Holes and floaters were detected perfectly at every severity we tried.
+Self-intersection, hidden shells, thin walls and noise were detected once they were large enough to move the matching scalar, with cross-talk that prevents those scalars from being used as defect names.
+On expert labels from 3D-DefectBench the same probes, read out by a logistic regression trained only on crowd votes, landed in the middle of a field of VLM judges and did not significantly differ from the strongest of them.
+On MATE-3D the associations with human geometry ratings that survive a within-generator analysis are small, and some associations that look large in a pooled table are generator identity.
+A secondary comparison with Hi3DBench pseudo-labels shows the same weak within-generator direction (absolute correlation at most 0.111) and a reversal on geometric detail, which is a complexity confound for a validity gate rather than a human replication.
+% src: results/RESULTS_milestone3.md; results/hi3dbench/hi3dbench_correlations.csv
+Thresholds taken from generated assets that people called clean are loose enough to miss injected defects, while strict thresholds already fire on clean scans.
+Evaluators can use these probes as a validity gate and as a control that makes generator confounds visible.
+Perceptual and VLM judges remain necessary for the question the probes do not answer.

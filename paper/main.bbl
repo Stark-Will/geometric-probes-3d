@@ -1,0 +1,305 @@
+\begin{thebibliography}{40}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Poole et~al.(2022)Poole, Jain, Barron, and
+  Mildenhall]{poole2022dreamfusion}
+Ben Poole, Ajay Jain, Jonathan~T. Barron, and Ben Mildenhall.
+\newblock {DreamFusion}: Text-to-{3D} using {2D} diffusion.
+\newblock \emph{arXiv preprint arXiv:2209.14988}, 2022.
+
+\bibitem[Lin et~al.(2023)Lin, Gao, Tang, Takikawa, Zeng, Huang, Kreis, Fidler,
+  Liu, and Lin]{lin2023magic3d}
+Chen-Hsuan Lin, Jun Gao, Luming Tang, Towaki Takikawa, Xiaohui Zeng, Xun Huang,
+  Karsten Kreis, Sanja Fidler, Ming-Yu Liu, and Tsung-Yi Lin.
+\newblock {Magic3D}: High-resolution text-to-{3D} content creation.
+\newblock In \emph{Proceedings of the IEEE/CVF Conference on Computer Vision
+  and Pattern Recognition (CVPR)}, 2023.
+
+\bibitem[Wu et~al.(2024{\natexlab{a}})Wu, Yang, Li, Zhang, Liu, Guibas, Lin,
+  and Wetzstein]{wu2024gpteval3d}
+Tong Wu, Guandao Yang, Zhibing Li, Kai Zhang, Ziwei Liu, Leonidas Guibas, Dahua
+  Lin, and Gordon Wetzstein.
+\newblock {GPT-4V(ision)} is a human-aligned evaluator for text-to-{3D}
+  generation.
+\newblock In \emph{Proceedings of the IEEE/CVF Conference on Computer Vision
+  and Pattern Recognition (CVPR)}, pages 22227--22238, 2024{\natexlab{a}}.
+
+\bibitem[Zhang et~al.(2025{\natexlab{a}})Zhang, Cui, Yang, Li, and
+  Xu]{zhang2025mate3d}
+Yujie Zhang, Bingyang Cui, Qi~Yang, Zhu Li, and Yiling Xu.
+\newblock Benchmarking and learning multi-dimensional quality evaluator for
+  text-to-{3D} generation.
+\newblock In \emph{Proceedings of the IEEE/CVF International Conference on
+  Computer Vision (ICCV)}, pages 18563--18574, 2025{\natexlab{a}}.
+
+\bibitem[Zhao et~al.(2026)Zhao, Jia, Je, Tang, Chan, Spedden, Palleschi, Huang,
+  Wang, and Zheng]{zhao2026defectbench}
+Zhenyu Zhao, Nanshan Jia, Jihyeon Je, Yifu Tang, Alvin Chan, Michael Spedden,
+  Michael~V. Palleschi, Sui Huang, Jingshen Wang, and Zeyu Zheng.
+\newblock {3D-DefectBench}: A controlled factorial study of vision-language
+  model evaluation pipelines for fine-grained {3D} generation defects.
+\newblock \emph{arXiv preprint arXiv:2607.10826}, 2026.
+
+\bibitem[Zhang et~al.(2025{\natexlab{b}})Zhang, Zhuo, Chu, Wu, Li, Pan, Lin,
+  and Liu]{zhang2025hi3deval}
+Yuhan Zhang, Long Zhuo, Ziyang Chu, Tong Wu, Zhibing Li, Liang Pan, Dahua Lin,
+  and Ziwei Liu.
+\newblock {Hi3DEval}: Advancing {3D} generation evaluation with hierarchical
+  validity.
+\newblock In \emph{Advances in Neural Information Processing Systems (NeurIPS),
+  Datasets and Benchmarks Track}, 2025{\natexlab{b}}.
+\newblock arXiv:2508.05609.
+
+\bibitem[Attene(2010)]{attene2010meshfix}
+Marco Attene.
+\newblock A lightweight approach to repairing digitized polygon meshes.
+\newblock \emph{The Visual Computer}, 26\penalty0 (11):\penalty0 1393--1406,
+  2010.
+
+\bibitem[Zhou and Jacobson(2016)]{zhou2016thingi10k}
+Qingnan Zhou and Alec Jacobson.
+\newblock {Thingi10K}: A dataset of 10,000 {3D}-printing models.
+\newblock \emph{arXiv preprint arXiv:1605.04797}, 2016.
+
+\bibitem[Garland and Heckbert(1997)]{garland1997qem}
+Michael Garland and Paul~S. Heckbert.
+\newblock Surface simplification using quadric error metrics.
+\newblock In \emph{Proceedings of SIGGRAPH 97}, pages 209--216, 1997.
+
+\bibitem[Faruqi et~al.(2026)Faruqi, Katary, Tas, Hradilak, Zhang, Li, Manhardt,
+  Nisser, Phadnis, Du, Tombari, Hofmann, et~al.]{faruqi2026instructmesh}
+Faraz Faruqi, Ahmed Katary, Demircan Tas, Theresa Hradilak, Ning Zhang, Jiaji
+  Li, Fabian Manhardt, Martin Nisser, Vrushank Phadnis, Ruofei Du, Federico
+  Tombari, Megan Hofmann, et~al.
+\newblock {InstructMesh}: Selective refinement of generative {3D} models for
+  fabrication.
+\newblock \emph{arXiv preprint arXiv:2608.28534}, 2026.
+
+\bibitem[Downs et~al.(2022)Downs, Francis, Koenig, Kinman, Hickman, Reymann,
+  McHugh, and Vanhoucke]{downs2022gso}
+Laura Downs, Anthony Francis, Nate Koenig, Brandon Kinman, Ryan Hickman, Krista
+  Reymann, Thomas~B. McHugh, and Vincent Vanhoucke.
+\newblock Google scanned objects: A high-quality dataset of {3D} scanned
+  household items.
+\newblock In \emph{IEEE International Conference on Robotics and Automation
+  (ICRA)}, 2022.
+
+\bibitem[Wang et~al.(2023)Wang, Du, Li, Yeh, and Shakhnarovich]{wang2023sjc}
+Haochen Wang, Xiaodan Du, Jiahao Li, Raymond~A. Yeh, and Greg Shakhnarovich.
+\newblock Score {Jacobian} chaining: Lifting pretrained {2D} diffusion models
+  for {3D} generation.
+\newblock In \emph{Proceedings of the IEEE/CVF Conference on Computer Vision
+  and Pattern Recognition (CVPR)}, 2023.
+
+\bibitem[Metzer et~al.(2022)Metzer, Richardson, Patashnik, Giryes, and
+  Cohen-Or]{metzer2022latentnerf}
+Gal Metzer, Elad Richardson, Or~Patashnik, Raja Giryes, and Daniel Cohen-Or.
+\newblock {Latent-NeRF} for shape-guided generation of {3D} shapes and
+  textures.
+\newblock \emph{arXiv preprint arXiv:2211.07600}, 2022.
+
+\bibitem[Tsalicoglou et~al.(2023)Tsalicoglou, Manhardt, Tonioni, Niemeyer, and
+  Tombari]{tsalicoglou2023textmesh}
+Christina Tsalicoglou, Fabian Manhardt, Alessio Tonioni, Michael Niemeyer, and
+  Federico Tombari.
+\newblock {TextMesh}: Generation of realistic {3D} meshes from text prompts.
+\newblock \emph{arXiv preprint arXiv:2304.12439}, 2023.
+
+\bibitem[He et~al.(2023)He, Bai, Lin, Zhao, Hu, Sheng, Yi, Li, and
+  Liu]{he2023t3bench}
+Yuze He, Yushi Bai, Matthieu Lin, Wang Zhao, Yubin Hu, Jenny Sheng, Ran Yi,
+  Juanzi Li, and Yong-Jin Liu.
+\newblock {T$^3$Bench}: Benchmarking current progress in text-to-{3D}
+  generation.
+\newblock \emph{arXiv preprint arXiv:2310.02977}, 2023.
+
+\bibitem[Duggal et~al.(2025)Duggal, Hu, Michel, Kembhavi, Freeman, Smith,
+  Krishna, Torralba, Farhadi, and Ma]{duggal2025eval3d}
+Shivam Duggal, Yushi Hu, Oscar Michel, Aniruddha Kembhavi, William~T. Freeman,
+  Noah~A. Smith, Ranjay Krishna, Antonio Torralba, Ali Farhadi, and Wei-Chiu
+  Ma.
+\newblock {Eval3D}: Interpretable and fine-grained evaluation for {3D}
+  generation.
+\newblock In \emph{Proceedings of the IEEE/CVF Conference on Computer Vision
+  and Pattern Recognition (CVPR)}, pages 13326--13336, 2025.
+
+\bibitem[Maiti et~al.(2025)Maiti, Agapito, and Kokkinos]{maiti2025gen3deval}
+Shalini Maiti, Lourdes Agapito, and Filippos Kokkinos.
+\newblock {Gen3DEval}: Using {vLLMs} for automatic evaluation of generated {3D}
+  objects.
+\newblock \emph{arXiv preprint arXiv:2504.08125}, 2025.
+
+\bibitem[Cui et~al.(2025)Cui, Zhang, Yang, Li, and Xu]{cui2025fine}
+Bingyang Cui, Yujie Zhang, Qi~Yang, Zhu Li, and Yiling Xu.
+\newblock Towards fine-grained text-to-{3D} quality assessment: A benchmark and
+  a two-stage rank-learning metric.
+\newblock \emph{arXiv preprint arXiv:2509.23841}, 2025.
+
+\bibitem[Zhang et~al.(2025{\natexlab{c}})Zhang, Zhang, Wu, Wang, Wetzstein,
+  Lin, and Liu]{zhang2025gen3dbench}
+Yuhan Zhang, Mengchen Zhang, Tong Wu, Tengfei Wang, Gordon Wetzstein, Dahua
+  Lin, and Ziwei Liu.
+\newblock {3DGen-Bench}: Comprehensive benchmark suite for {3D} generative
+  models.
+\newblock \emph{arXiv preprint arXiv:2503.21745}, 2025{\natexlab{c}}.
+
+\bibitem[Radford et~al.(2021)Radford, Kim, Hallacy, Ramesh, Goh, Agarwal,
+  Sastry, Askell, Mishkin, Clark, Krueger, and Sutskever]{radford2021clip}
+Alec Radford, Jong~Wook Kim, Chris Hallacy, Aditya Ramesh, Gabriel Goh,
+  Sandhini Agarwal, Girish Sastry, Amanda Askell, Pamela Mishkin, Jack Clark,
+  Gretchen Krueger, and Ilya Sutskever.
+\newblock Learning transferable visual models from natural language
+  supervision.
+\newblock In \emph{International Conference on Machine Learning (ICML)}, 2021.
+
+\bibitem[Jia et~al.(2026)Jia, Zhao, Huang, Wang, and Zheng]{jia2026db3dme}
+Nanshan Jia, Zhenyu Zhao, Sui Huang, Jingshen Wang, and Zeyu Zheng.
+\newblock {DB-3DME}: From dataset to benchmark for human-aligned automatic {3D}
+  mesh evaluation.
+\newblock In \emph{Proceedings of the IEEE/CVF Conference on Computer Vision
+  and Pattern Recognition Workshops (CVPRW)}, 2026.
+\newblock arXiv:2606.10142.
+
+\bibitem[Tatarchenko et~al.(2019)Tatarchenko, Richter, Ranftl, Li, Koltun, and
+  Brox]{tatarchenko2019single}
+Maxim Tatarchenko, Stephan~R. Richter, Ren{\'e} Ranftl, Zhuwen Li, Vladlen
+  Koltun, and Thomas Brox.
+\newblock What do single-view {3D} reconstruction networks learn?
+\newblock In \emph{Proceedings of the IEEE/CVF Conference on Computer Vision
+  and Pattern Recognition (CVPR)}, 2019.
+
+\bibitem[Nehm{\'e} et~al.(2023)Nehm{\'e}, Delanoy, Dupont, Farrugia, Le~Callet,
+  and Lavou{\'e}]{nehme2023tmqa}
+Yana Nehm{\'e}, Johanna Delanoy, Florent Dupont, Jean-Philippe Farrugia,
+  Patrick Le~Callet, and Guillaume Lavou{\'e}.
+\newblock Textured mesh quality assessment: Large-scale dataset and deep
+  learning-based quality metric.
+\newblock \emph{ACM Transactions on Graphics}, 42\penalty0 (3):\penalty0
+  31:1--31:20, 2023.
+
+\bibitem[Cignoni et~al.(2008)Cignoni, Callieri, Corsini, Dellepiane, Ganovelli,
+  and Ranzuglia]{cignoni2008meshlab}
+Paolo Cignoni, Marco Callieri, Massimiliano Corsini, Matteo Dellepiane, Fabio
+  Ganovelli, and Guido Ranzuglia.
+\newblock {MeshLab}: an open-source mesh processing tool.
+\newblock In \emph{Eurographics Italian Chapter Conference}, pages 129--136,
+  2008.
+
+\bibitem[{Dawson-Haggerty et al.}(2019)]{trimesh}
+{Dawson-Haggerty et al.}
+\newblock trimesh (version 5.1.0).
+\newblock \url{https://trimesh.org/}, 2019.
+
+\bibitem[Wald et~al.(2014)Wald, Woop, Benthin, Johnson, and
+  Ernst]{wald2014embree}
+Ingo Wald, Sven Woop, Carsten Benthin, Gregory~S. Johnson, and Manfred Ernst.
+\newblock Embree: A kernel framework for efficient {CPU} ray tracing.
+\newblock \emph{ACM Transactions on Graphics}, 33\penalty0 (4):\penalty0
+  143:1--143:8, 2014.
+
+\bibitem[Chicco and Jurman(2020)]{chicco2020mcc}
+Davide Chicco and Giuseppe Jurman.
+\newblock The advantages of the {Matthews} correlation coefficient ({MCC}) over
+  {F1} score and accuracy in binary classification evaluation.
+\newblock \emph{BMC Genomics}, 21:\penalty0 6, 2020.
+
+\bibitem[McNemar(1947)]{mcnemar1947}
+Quinn McNemar.
+\newblock Note on the sampling error of the difference between correlated
+  proportions or percentages.
+\newblock \emph{Psychometrika}, 12\penalty0 (2):\penalty0 153--157, 1947.
+
+\bibitem[Benjamini and Hochberg(1995)]{benjamini1995fdr}
+Yoav Benjamini and Yosef Hochberg.
+\newblock Controlling the false discovery rate: A practical and powerful
+  approach to multiple testing.
+\newblock \emph{Journal of the Royal Statistical Society: Series B
+  (Methodological)}, 57\penalty0 (1):\penalty0 289--300, 1995.
+
+\bibitem[Efron and Tibshirani(1993)]{efron1993bootstrap}
+Bradley Efron and Robert~J. Tibshirani.
+\newblock \emph{An Introduction to the Bootstrap}.
+\newblock Chapman \& Hall, 1993.
+
+\bibitem[Hong et~al.(2024)Hong, Tang, Cao, Shi, Wu, Chen, Yang, Wang, Pan, Lin,
+  and Liu]{hong2024threedtopia}
+Fangzhou Hong, Jiaxiang Tang, Ziang Cao, Min Shi, Tong Wu, Zhaoxi Chen, Shuai
+  Yang, Tengfei Wang, Liang Pan, Dahua Lin, and Ziwei Liu.
+\newblock {3DTopia}: Large text-to-{3D} generation model with hybrid diffusion
+  priors.
+\newblock \emph{arXiv preprint arXiv:2403.02234}, 2024.
+
+\bibitem[Wu et~al.(2024{\natexlab{b}})Wu, Zhou, Yi, Yuan, and
+  Zhang]{wu2024consistent3d}
+Zike Wu, Pan Zhou, Xuanyu Yi, Xiaoding Yuan, and Hanwang Zhang.
+\newblock {Consistent3D}: Towards consistent high-fidelity text-to-{3D}
+  generation with deterministic sampling prior.
+\newblock \emph{arXiv preprint arXiv:2401.09050}, 2024{\natexlab{b}}.
+
+\bibitem[Liu et~al.(2023)Liu, Shi, Chen, Zhang, Xu, Wei, Chen, Zeng, Gu, and
+  Su]{liu2023one2345pp}
+Minghua Liu, Ruoxi Shi, Linghao Chen, Zhuoyang Zhang, Chao Xu, Xinyue Wei,
+  Hansheng Chen, Chong Zeng, Jiayuan Gu, and Hao Su.
+\newblock {One-2-3-45++}: Fast single image to {3D} objects with consistent
+  multi-view generation and {3D} diffusion.
+\newblock \emph{arXiv preprint arXiv:2311.07885}, 2023.
+
+\bibitem[Huang et~al.(2025)Huang, Boss, Vasishta, Rehg, and
+  Jampani]{huang2025spar3d}
+Zixuan Huang, Mark Boss, Aaryaman Vasishta, James~M. Rehg, and Varun Jampani.
+\newblock {SPAR3D}: Stable point-aware reconstruction of {3D} objects from
+  single images.
+\newblock \emph{arXiv preprint arXiv:2501.04689}, 2025.
+
+\bibitem[Xiang et~al.(2025)Xiang, Lv, Xu, Deng, Wang, Zhang, Chen, Tong, and
+  Yang]{xiang2025trellis}
+Jianfeng Xiang, Zelong Lv, Sicheng Xu, Yu~Deng, Ruicheng Wang, Bowen Zhang,
+  Dong Chen, Xin Tong, and Jiaolong Yang.
+\newblock Structured {3D} latents for scalable and versatile {3D} generation.
+\newblock In \emph{Proceedings of the IEEE/CVF Conference on Computer Vision
+  and Pattern Recognition (CVPR)}, 2025.
+
+\bibitem[Tochilkin et~al.(2024)Tochilkin, Pankratz, Liu, Huang, Letts, Li,
+  Liang, Laforte, Jampani, and Cao]{tochilkin2024triposr}
+Dmitry Tochilkin, David Pankratz, Zexiang Liu, Zixuan Huang, Adam Letts,
+  Yangguang Li, Ding Liang, Christian Laforte, Varun Jampani, and Yan-Pei Cao.
+\newblock {TripoSR}: Fast {3D} object reconstruction from a single image.
+\newblock \emph{arXiv preprint arXiv:2403.02151}, 2024.
+
+\bibitem[Xu et~al.(2024)Xu, Cheng, Gao, Wang, Gao, and Shan]{xu2024instantmesh}
+Jiale Xu, Weihao Cheng, Yiming Gao, Xintao Wang, Shenghua Gao, and Ying Shan.
+\newblock {InstantMesh}: Efficient {3D} mesh generation from a single image
+  with sparse-view large reconstruction models.
+\newblock \emph{arXiv preprint arXiv:2404.07191}, 2024.
+
+\bibitem[Zhao et~al.(2025)Zhao, Lai, Lin, Zhao, Liu, Yang, Feng, Yang, Zhang,
+  Yang, Shi, Liu, et~al.]{zhao2025hunyuan3d2}
+Zibo Zhao, Zeqiang Lai, Qingxiang Lin, Yunfei Zhao, Haolin Liu, Shuhui Yang,
+  Yifei Feng, Mingxin Yang, Sheng Zhang, Xianghui Yang, Huiwen Shi, Sicong Liu,
+  et~al.
+\newblock {Hunyuan3D 2.0}: Scaling diffusion models for high resolution
+  textured {3D} assets generation.
+\newblock \emph{arXiv preprint arXiv:2501.12202}, 2025.
+
+\bibitem[Wang et~al.(2024)Wang, Wang, Chen, Xiang, Chen, Yu, Li, Su, and
+  Zhu]{wang2024crm}
+Zhengyi Wang, Yikai Wang, Yifei Chen, Chendong Xiang, Shuo Chen, Dajiang Yu,
+  Chongxuan Li, Hang Su, and Jun Zhu.
+\newblock {CRM}: Single image to {3D} textured mesh with convolutional
+  reconstruction model.
+\newblock In \emph{European Conference on Computer Vision (ECCV)}, 2024.
+
+\bibitem[Wu et~al.(2024{\natexlab{c}})Wu, Liu, Cai, Yan, Wang, Hu, Duan, and
+  Ma]{wu2024unique3d}
+Kailu Wu, Fangfu Liu, Zhihan Cai, Runjie Yan, Hanyang Wang, Yating Hu, Yueqi
+  Duan, and Kaisheng Ma.
+\newblock {Unique3D}: High-quality and efficient {3D} mesh generation from a
+  single image.
+\newblock In \emph{Advances in Neural Information Processing Systems
+  (NeurIPS)}, 2024{\natexlab{c}}.
+
+\end{thebibliography}

@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: "If you use this code or the per-asset probe statistics, please cite the paper."
+title: "Geometric validity is not perceptual quality: what deterministic probes can and cannot measure in generated 3D assets"
+authors:
+  - family-names: Carter
+    given-names: Miles
+    affiliation: "modelfy.art"
+    email: support@modelfy.art
+version: "1.0"
+date-released: 2026-09-27
+license: MIT
+repository-code: "https://github.com/mart-openclaw/geometric-probes-3d"
+url: "https://modelfy.art"
+keywords:
+  - 3D generation
+  - mesh quality
+  - geometric validity
+  - vision-language models
+  - defect detection
+  - generated 3D assets
+preferred-citation:
+  type: article
+  title: "Geometric validity is not perceptual quality: what deterministic probes can and cannot measure in generated 3D assets"
+  authors:
+    - family-names: Carter
+      given-names: Miles
+  year: 2026

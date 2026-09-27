@@ -1,0 +1,18 @@
+{
+ "n_meshes": 1280,
+ "failures": [],
+ "n_boot": 10000,
+ "boot_seed": 2026,
+ "n_perm": 10000,
+ "perm_seed": 2027,
+ "generator_mean_MOS": {
+  "3dtopia": 4.041,
+  "consistent3d": 4.058,
+  "dreamfusion": 4.156,
+  "latentnerf": 3.439,
+  "magic3d": 4.933,
+  "one2345++": 6.679,
+  "sjc": 2.96,
+  "textmesh": 4.247
+ }
+}

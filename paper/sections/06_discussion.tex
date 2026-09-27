@@ -1,0 +1,99 @@
+\section{Discussion}
+\label{sec:disc}
+
+\subsection{What the probes measure}
+The injection study is the cleanest evidence the probes do what their definitions say.
+On real scans, a hole becomes a boundary and a disconnected icosphere becomes a small component, with AUROC 1.000 at the smallest severity we tried, and with perfect specificity at a zero threshold.
+% src: results/gso/gso_detection.csv; results/RESULTS_milestone2.md
+Self-intersection, hidden surface, thin walls and dihedral roughness then pick up the operators aimed at them once the operator is large enough to move the corresponding scalar.
+That is geometric validity in the narrow sense: a named, local, mesh-theoretic failure, inserted into geometry that was not generated to fool a judge.
+
+The same study limits how far a scalar can be read as a defect type.
+At high severity, self-intersection also rises under noise and under thin fins, and hidden surface rises under interpenetration, crossing sheets, noise and fins.
+A gate can reject a mesh for ``this quantity exceeded a threshold''.
+It cannot, without further rules, file the failure under the benchmark's noun for it.
+Holes and floaters are the exceptions.
+Their checks stayed specific.
+
+Two operating points should be reported, because they answer different questions.
+A threshold of zero asks whether the signal is absent.
+On these decimated scans it is absent for boundaries and small components, and it is often present for self-intersection, hidden surface and thin walls.
+A mesh can be a careful scan of a physical object and still fail a strict thin-wall or self-intersection check after decimation.
+The calibrated thresholds ask a different question: what level of the same signal is still typical of generated assets that crowd workers called free of geometric defects?
+Those levels are high---several percent of faces self-intersecting or hidden, several small components, a genus proxy in the tens---and they are high enough that the injected defects often fall below them.
+Human ``defect-free'' is not geometric cleanliness.
+Figure~\ref{fig:gallery} is the same fact on single meshes: an expert-unanimous clean asset can score like a defect, a high geometry MOS can score like a defect, and a clean scan can light up the hidden-surface and self-intersection checks.
+
+\subsection{What they do not measure}
+Perceived quality, within a generator, is only weakly related to these scalars.
+The within-generator correlations that replicated on MATE-3D are negative, as predicted, and none of the nine pre-registered ones exceeds 0.2 in absolute value.
+% src: results/RESULTS_milestone2.md; results/mate3d/mate3d_dec10k_correlations.csv
+Dihedral roughness and hidden surface look associated with geometry MOS in the pooled table and in the eight generator means, and they are not associated with it inside a generator.
+The form/surface classifier has the same structure on 3D-DefectBench: generator identity alone reaches MCC 0.273, next to the probe's 0.288, and the silver crowd labels for that defect were close to chance (out-of-fold AUROC 0.521).
+% src: results/main_comparison_expert_agreement.csv; results/ablations/expert_trained_on_silver.csv; results/RESULTS_milestone1.md
+A feature that mostly distinguishes model A from model B will look like a defect detector if the two models have different defect rates.
+The within-generator AUROCs are the ones that survive that reading, and they are uneven.
+
+Hi3DBench points the same way, and only as secondary evidence.
+The four pre-registered predictors meet the negative within-generator rule for Geometry Plausibility, with absolute correlations at most 0.111, and the two-way fixed-effect estimand is about zero or, for self-intersection, positive.
+Within a prompt, more thin walls or more self-intersection accompanies a higher score from the same automated judge.
+The geometric-detail score then reverses all four within-generator signs.
+A validity gate that penalises thin walls, genus or self-intersection will also penalise meshes that this MLLM pipeline calls detailed.
+Agreement with that pipeline is not human validation.
+% src: results/RESULTS_milestone3.md; results/hi3dbench/hi3dbench_correlations.csv
+
+Prompt-conditioned defects are outside the probes' scope, and the negative controls say so.
+Missing parts and pose depend on the text.
+The probe is near null; the VLMs are not.
+A validity gate that fails an asset for a missing part it cannot see is the wrong tool, just as a VLM vote is the wrong tool for certifying that a mesh has no self-intersection.
+
+The expert-set horse-race should be read at the width of its intervals.
+Macro MCC 0.158 over five defects is 8th of 15 predictors.
+% src: results/macro_mcc.csv; results/RESULTS_milestone1.md
+Macro MCC 0.272 over the three primary defects sits below Gemini 2.5 Pro and Gemini 3.1 Pro (0.341 and 0.335).
+The comparisons against those models, and against GPT-5.4 and Claude Opus 4.7, were not significant.
+Some of that is power: extra geometry has six agreed positives, and McNemar scores accuracy, so a balanced probe that predicts 22 positives is punished relative to a VLM that predicts one.
+We do not describe the probe as better than a VLM judge.
+``Comparable to mid-tier VLM judges'' is as far as these cells support.
+% src: results/macro_mcc.csv; results/paired_tests_probe_vs_vlm.csv; results/main_comparison_expert_agreement.csv; results/RESULTS_milestone1.md
+
+Fusion does not change that recommendation.
+Learning a weight on the probe logit and the VLM vote did not help the four strongest models.
+The training-free AND rule moved MCC up in 29 of 36 pairs and survived correction in one pair, a weak VLM on one defect.
+% src: results/RESULTS_milestone2.md; results/ablations/and_or_rule_bootstrap.csv
+The OR rule significantly hurt Gemini 3.1 Pro on fused/incomplete.
+An extra-geometry mean that jumps under AND is not, with six positives and no surviving corrected test, evidence of a reliable gain.
+Conjunctions remain a hypothesis for a larger expert set.
+
+The topology-only ablation is easy to over-read.
+On the expert cells, six topology features match or beat the full model.
+That comparison uses the same cells that would be flattered by any family we noticed after the fact, and the pre-registered single-feature shortlist was already chosen after seeing those cells.
+The external tests of the underlying quantities are the MATE-3D correlations and the GSO detections, not the ablation ranking.
+We would not ship a topology-only model on the basis of this test set.
+
+\subsection{Recommendations for evaluators}
+\begin{enumerate}
+  \item Report geometric validity beside perceptual scores, not inside them.
+  A leaderboard that sorts generators by VLM votes or by geometry MOS is answering a perceptual question.
+  Holes, floaters, self-intersection, hidden shells and thin walls can be columns of their own, with the definition and the threshold written down.
+  \item Publish the continuous score and at least two operating points: a strict zero threshold, and any threshold derived from human-accepted meshes.
+  State which reference set produced the threshold.
+  A pass at the crowd-calibrated \(\tau_c\) of this paper is not evidence that the mesh is geometrically clean, and a failure at zero is not evidence that a rater would reject a scan.
+  \item Include a generator-only baseline and a within-generator estimand whenever a geometric feature is correlated with a human or VLM score.
+  For genus, self-intersection, roughness and hidden surface, the pooled MATE-3D correlation is larger in magnitude than the within-generator correlation, and for roughness and hidden surface the within-generator interval includes zero.
+  \item Use the probes as a gate and as a diagnostic, and keep a perceptual or VLM judge for preference, prompt fidelity and defects that are defined by the prompt.
+  If the two are combined, pre-register the rule, freeze the probe threshold on a separate split, and correct for the number of judges tested.
+  The AND results here are directionally consistent and mostly non-significant.
+  \item Do not select the feature family on the evaluation split.
+  If a simpler topology model is preferable, confirm it on a later corpus.
+  The single-feature AUROCs in Section~\ref{sec:db} are exploratory.
+  \item Name the label. Expert votes, crowd votes and MLLM pseudo-labels are different targets.
+  The Hi3DBench analysis is agreement with the Hi3DEval automated judge.
+  It is not a second human validation.
+  Do not treat a negative association with Geometry Plausibility as a licence to penalise thin walls, genus or self-intersection without a separate check on detail: on the geometric-detail pseudo-label those three signals reverse.
+  \item Expect cross-talk when turning a score into a defect name.
+  Boundary fraction and small-component count were specific under our operators.
+  Self-intersection and hidden surface were not.
+  A repair router that trusts one scalar as a type label will send noise and thin fins to the wrong fixer.
+\end{enumerate}
+% src: results/RESULTS_milestone1.md; results/RESULTS_milestone2.md; results/RESULTS_milestone3.md; results/macro_mcc.csv; results/mate3d/mate3d_dec10k_correlations.csv; results/gso/gso_detection.csv; results/gso/tau_calibrated.json; results/hi3dbench/hi3dbench_correlations.csv

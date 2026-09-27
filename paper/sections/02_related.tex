@@ -1,0 +1,41 @@
+\section{Related work}
+\label{sec:related}
+
+\subsection{Perceptual and VLM evaluation}
+Text-to-3D methods were first compared largely by inspection of renders \citep{poole2022dreamfusion,lin2023magic3d,wang2023sjc,metzer2022latentnerf,tsalicoglou2023textmesh}.
+Later benchmarks make that inspection repeatable.
+T$^3$Bench scores alignment and quality from multi-view renders \citep{he2023t3bench}.
+GPTEval3D showed that a VLM can track human rankings \citep{wu2024gpteval3d}.
+Eval3D argues for fine-grained criteria rather than one score \citep{duggal2025eval3d}, and Gen3DEval uses vision-language models as automatic judges \citep{maiti2025gen3deval}.
+MATE-3D collects multi-dimensional human ratings, including a geometry mean opinion score, on 1{,}280 meshes from eight generators \citep{zhang2025mate3d}.
+% src: results/mate3d/mate3d_dec10k_meta.json
+A later benchmark follows the same perceptual direction at finer granularity \citep{cui2025fine}.
+3DGen-Bench releases human preferences over a broad generator set; we did not use it, because the data files are gated \citep{zhang2025gen3dbench}.
+
+3D-DefectBench changes the unit from a scalar preference to binary, fine-grained defects, and it varies the VLM pipeline \citep{zhao2026defectbench}.
+The release contains expert labels, a crowd-labelled silver holdout, meshes and predictions from 12 VLMs.
+Those VLMs are compared with a CLIP zero-shot baseline \citep{radford2021clip}.
+The paper does not evaluate a non-learned mesh baseline.
+% src: results/macro_mcc.csv
+DB-3DME studies human-aligned automatic mesh scores \citep{jia2026db3dme}.
+The release we inspected provides GIF renders rather than meshes, under the MIT licence on the dataset card, so the probes could not be run.
+Hi3DEval proposes a hierarchy of validity, geometry and texture scores \citep{zhang2025hi3deval}.
+Its published object-level scores are produced by an automated MLLM pipeline.
+We treat them as pseudo-labels.
+
+\subsection{Geometric metrics, repair and fabrication}
+When a target surface exists, Chamfer distance, IoU and F-score are the usual scores, and the choice among them changes the conclusion \citep{tatarchenko2019single}.
+The benchmarks above do not provide a unique target surface.
+Perceptual metrics trained on distortions of artist or scanned meshes address a different question again \citep{nehme2023tmqa}.
+Repair tools already name several validity failures: MeshFix for some topological and geometric defects of digitised solids \citep{attene2010meshfix}, quadric simplification for a face budget \citep{garland1997qem}, and MeshLab for both simplification and a per-face self-intersection test \citep{cignoni2008meshlab}.
+Thingi10K showed how common such defects are in models people try to print \citep{zhou2016thingi10k}.
+InstructMesh classified fabrication defects on reconstructions from a single generator by hand, and left automatic detection open \citep{faruqi2026instructmesh}.
+We use that vocabulary as a fixed function of every face, and we compare the decisions with human labels and VLM votes on the same assets.
+Implementation uses Trimesh and Embree \citep{trimesh,wald2014embree}.
+
+\subsection{What is compared here}
+Perceptual benchmarks answer preference, prompt alignment and texture.
+They do not say whether a ``defect-free'' vote implies a mesh without holes, floaters, self-intersections, internal shells or thin walls, or whether a failure a probe can name is the failure a rater named.
+That comparison was pre-registered.
+MCC is used because accuracy is misleading under imbalance \citep{chicco2020mcc}, paired decisions use McNemar's test \citep{mcnemar1947}, multiplicity uses the Benjamini--Hochberg procedure \citep{benjamini1995fdr}, and intervals are percentile bootstraps \citep{efron1993bootstrap}.
+The design choice is to apply these separately to validity and to perception, with a generator-only baseline in every human-label analysis.

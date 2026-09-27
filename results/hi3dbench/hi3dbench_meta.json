@@ -1,0 +1,28 @@
+{
+ "n_meshes_analysed": 2797,
+ "n_labelled_in_scope": 2797,
+ "n_prompts": 510,
+ "per_generator_n": {
+  "hunyuan": 510,
+  "instant-mesh": 510,
+  "spard": 510,
+  "trellis": 510,
+  "triposr": 510,
+  "crm": 247
+ },
+ "failures": [],
+ "n_boot": 10000,
+ "n_boot_D": 2000,
+ "boot_seed": 2029,
+ "n_perm": 10000,
+ "perm_seed": 2030,
+ "generator_mean_geometry_score": {
+  "crm": 4.745,
+  "hunyuan": 6.292,
+  "instant-mesh": 5.424,
+  "spard": 5.779,
+  "trellis": 5.863,
+  "triposr": 5.222
+ },
+ "label_source": "Hi3DEval automated MLLM pipeline (pseudo-labels, not human ratings)"
+}

@@ -1,0 +1,19 @@
+{
+ "n_ref_assets": 200,
+ "tau_c": {
+  "boundary_edge_frac": 0.0,
+  "n_boundary_loops": 0.0,
+  "n_small_components": 3.049999999999983,
+  "n_components": 9.0,
+  "self_intersect_face_frac": 0.04428124303611786,
+  "hidden_surface_frac": 0.12816249999999998,
+  "thin_frac_0.005": 0.05032999999999996,
+  "thin_frac_0.01": 0.36372499999999935,
+  "dihedral_mean_deg": 23.83739659810175,
+  "angle_defect_mean": 0.425825311076626,
+  "genus_proxy": 48.099999999999966,
+  "winding_inconsistent_edge_frac": 0.0,
+  "nonmanifold_edge_frac": 0.0,
+  "sliver_face_frac": 0.17857177281610098
+ }
+}

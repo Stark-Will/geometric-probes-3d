@@ -1,0 +1,540 @@
+{
+ "2412.01506": {
+  "title": "Structured 3D Latents for Scalable and Versatile 3D Generation",
+  "authors": [
+   "Jianfeng Xiang",
+   "Zelong Lv",
+   "Sicheng Xu",
+   "Yu Deng",
+   "Ruicheng Wang",
+   "Bowen Zhang",
+   "Dong Chen",
+   "Xin Tong",
+   "Jiaolong Yang"
+  ],
+  "year": "2024"
+ },
+ "2211.07600": {
+  "title": "Latent-NeRF for Shape-Guided Generation of 3D Shapes and Textures",
+  "authors": [
+   "Gal Metzer",
+   "Elad Richardson",
+   "Or Patashnik",
+   "Raja Giryes",
+   "Daniel Cohen-Or"
+  ],
+  "year": "2022"
+ },
+ "2211.10440": {
+  "title": "Magic3D: High-Resolution Text-to-3D Content Creation",
+  "authors": [
+   "Chen-Hsuan Lin",
+   "Jun Gao",
+   "Luming Tang",
+   "Towaki Takikawa",
+   "Xiaohui Zeng",
+   "Xun Huang",
+   "Karsten Kreis",
+   "Sanja Fidler",
+   "Ming-Yu Liu",
+   "Tsung-Yi Lin"
+  ],
+  "year": "2022"
+ },
+ "2404.07191": {
+  "title": "InstantMesh: Efficient 3D Mesh Generation from a Single Image with Sparse-view Large Reconstruction Models",
+  "authors": [
+   "Jiale Xu",
+   "Weihao Cheng",
+   "Yiming Gao",
+   "Xintao Wang",
+   "Shenghua Gao",
+   "Ying Shan"
+  ],
+  "year": "2024"
+ },
+ "2403.05034": {
+  "title": "CRM: Single Image to 3D Textured Mesh with Convolutional Reconstruction Model",
+  "authors": [
+   "Zhengyi Wang",
+   "Yikai Wang",
+   "Yifei Chen",
+   "Chendong Xiang",
+   "Shuo Chen",
+   "Dajiang Yu",
+   "Chongxuan Li",
+   "Hang Su",
+   "Jun Zhu"
+  ],
+  "year": "2024"
+ },
+ "2401.04092": {
+  "title": "GPT-4V(ision) is a Human-Aligned Evaluator for Text-to-3D Generation",
+  "authors": [
+   "Tong Wu",
+   "Guandao Yang",
+   "Zhibing Li",
+   "Kai Zhang",
+   "Ziwei Liu",
+   "Leonidas Guibas",
+   "Dahua Lin",
+   "Gordon Wetzstein"
+  ],
+  "year": "2024"
+ },
+ "2405.20343": {
+  "title": "Unique3D: High-Quality and Efficient 3D Mesh Generation from a Single Image",
+  "authors": [
+   "Kailu Wu",
+   "Fangfu Liu",
+   "Zhihan Cai",
+   "Runjie Yan",
+   "Hanyang Wang",
+   "Yating Hu",
+   "Yueqi Duan",
+   "Kaisheng Ma"
+  ],
+  "year": "2024"
+ },
+ "2607.10826": {
+  "title": "3D-DefectBench: A Controlled Factorial Study of Vision-Language Model Evaluation Pipelines for Fine-Grained 3D Generation Defects",
+  "authors": [
+   "Zhenyu Zhao",
+   "Nanshan Jia",
+   "Jihyeon Je",
+   "Yifu Tang",
+   "Alvin Chan",
+   "Michael Spedden",
+   "Michael V. Palleschi",
+   "Sui Huang",
+   "Jingshen Wang",
+   "Zeyu Zheng"
+  ],
+  "year": "2026"
+ },
+ "2209.14988": {
+  "title": "DreamFusion: Text-to-3D using 2D Diffusion",
+  "authors": [
+   "Ben Poole",
+   "Ajay Jain",
+   "Jonathan T. Barron",
+   "Ben Mildenhall"
+  ],
+  "year": "2022"
+ },
+ "2606.10142": {
+  "title": "DB-3DME: From Dataset to Benchmark for Human-aligned Automatic 3D Mesh Evaluation",
+  "authors": [
+   "Nanshan Jia",
+   "Zhenyu Zhao",
+   "Sui Huang",
+   "Jingshen Wang",
+   "Zeyu Zheng"
+  ],
+  "year": "2026"
+ },
+ "2412.11170": {
+  "title": "Benchmarking and Learning Multi-Dimensional Quality Evaluator for Text-to-3D Generation",
+  "authors": [
+   "Yujie Zhang",
+   "Bingyang Cui",
+   "Qi Yang",
+   "Zhu Li",
+   "Yiling Xu"
+  ],
+  "year": "2024"
+ },
+ "2501.12202": {
+  "title": "Hunyuan3D 2.0: Scaling Diffusion Models for High Resolution Textured 3D Assets Generation",
+  "authors": [
+   "Zibo Zhao",
+   "Zeqiang Lai",
+   "Qingxiang Lin",
+   "Yunfei Zhao",
+   "Haolin Liu",
+   "Shuhui Yang",
+   "Yifei Feng",
+   "Mingxin Yang",
+   "Sheng Zhang",
+   "Xianghui Yang",
+   "Huiwen Shi",
+   "Sicong Liu",
+   "Junta Wu",
+   "Yihang Lian",
+   "Fan Yang",
+   "Ruining Tang",
+   "Zebin He",
+   "Xinzhou Wang",
+   "Jian Liu",
+   "Xuhui Zuo",
+   "Zhuo Chen",
+   "Biwen Lei",
+   "Haohan Weng",
+   "Jing Xu",
+   "Yiling Zhu",
+   "Xinhai Liu",
+   "Lixin Xu",
+   "Changrong Hu",
+   "Shaoxiong Yang",
+   "Song Zhang",
+   "Yang Liu",
+   "Tianyu Huang",
+   "Lifu Wang",
+   "Jihong Zhang",
+   "Meng Chen",
+   "Liang Dong",
+   "Yiwen Jia",
+   "Yulin Cai",
+   "Jiaao Yu",
+   "Yixuan Tang",
+   "Hao Zhang",
+   "Zheng Ye",
+   "Peng He",
+   "Runzhou Wu",
+   "Chao Zhang",
+   "Yonghao Tan",
+   "Jie Xiao",
+   "Yangyu Tao",
+   "Jianchen Zhu",
+   "Jinbao Xue",
+   "Kai Liu",
+   "Chongqing Zhao",
+   "Xinming Wu",
+   "Zhichao Hu",
+   "Lei Qin",
+   "Jianbing Peng",
+   "Zhan Li",
+   "Minghui Chen",
+   "Xipeng Zhang",
+   "Lin Niu",
+   "Paige Wang",
+   "Yingkai Wang",
+   "Haozhao Kuang",
+   "Zhongyi Fan",
+   "Xu Zheng",
+   "Weihao Zhuang",
+   "YingPing He",
+   "Tian Liu",
+   "Yong Yang",
+   "Di Wang",
+   "Yuhong Liu",
+   "Jie Jiang",
+   "Jingwei Huang",
+   "Chunchao Guo"
+  ],
+  "year": "2025"
+ },
+ "2310.02977": {
+  "title": "T$^3$Bench: Benchmarking Current Progress in Text-to-3D Generation",
+  "authors": [
+   "Yuze He",
+   "Yushi Bai",
+   "Matthieu Lin",
+   "Wang Zhao",
+   "Yubin Hu",
+   "Jenny Sheng",
+   "Ran Yi",
+   "Juanzi Li",
+   "Yong-Jin Liu"
+  ],
+  "year": "2023"
+ },
+ "2403.02151": {
+  "title": "TripoSR: Fast 3D Object Reconstruction from a Single Image",
+  "authors": [
+   "Dmitry Tochilkin",
+   "David Pankratz",
+   "Zexiang Liu",
+   "Zixuan Huang",
+   "Adam Letts",
+   "Yangguang Li",
+   "Ding Liang",
+   "Christian Laforte",
+   "Varun Jampani",
+   "Yan-Pei Cao"
+  ],
+  "year": "2024"
+ },
+ "2204.11918": {
+  "title": "Google Scanned Objects: A High-Quality Dataset of 3D Scanned Household Items",
+  "authors": [
+   "Laura Downs",
+   "Anthony Francis",
+   "Nate Koenig",
+   "Brandon Kinman",
+   "Ryan Hickman",
+   "Krista Reymann",
+   "Thomas B. McHugh",
+   "Vincent Vanhoucke"
+  ],
+  "year": "2022"
+ },
+ "2501.04689": {
+  "title": "SPAR3D: Stable Point-Aware Reconstruction of 3D Objects from Single Images",
+  "authors": [
+   "Zixuan Huang",
+   "Mark Boss",
+   "Aaryaman Vasishta",
+   "James M. Rehg",
+   "Varun Jampani"
+  ],
+  "year": "2025"
+ },
+ "2403.12019": {
+  "title": "LN3DIFF++: Scalable Latent Neural Fields Diffusion for Speedy 3D Generation",
+  "authors": [
+   "Yushi Lan",
+   "Fangzhou Hong",
+   "Shangchen Zhou",
+   "Shuai Yang",
+   "Xuyi Meng",
+   "Yongwei Chen",
+   "Zhaoyang Lyu",
+   "Bo Dai",
+   "Xingang Pan",
+   "Chen Change Loy"
+  ],
+  "year": "2024"
+ },
+ "2212.00774": {
+  "title": "Score Jacobian Chaining: Lifting Pretrained 2D Diffusion Models for 3D Generation",
+  "authors": [
+   "Haochen Wang",
+   "Xiaodan Du",
+   "Jiahao Li",
+   "Raymond A. Yeh",
+   "Greg Shakhnarovich"
+  ],
+  "year": "2022"
+ },
+ "2508.05609": {
+  "title": "Hi3DEval: Advancing 3D Generation Evaluation with Hierarchical Validity",
+  "authors": [
+   "Yuhan Zhang",
+   "Long Zhuo",
+   "Ziyang Chu",
+   "Tong Wu",
+   "Zhibing Li",
+   "Liang Pan",
+   "Dahua Lin",
+   "Ziwei Liu"
+  ],
+  "year": "2025"
+ },
+ "2503.21745": {
+  "title": "3DGen-Bench: Comprehensive Benchmark Suite for 3D Generative Models",
+  "authors": [
+   "Yuhan Zhang",
+   "Mengchen Zhang",
+   "Tong Wu",
+   "Tengfei Wang",
+   "Gordon Wetzstein",
+   "Dahua Lin",
+   "Ziwei Liu"
+  ],
+  "year": "2025"
+ },
+ "2303.11328": {
+  "title": "Zero-1-to-3: Zero-shot One Image to 3D Object",
+  "authors": [
+   "Ruoshi Liu",
+   "Rundi Wu",
+   "Basile Van Hoorick",
+   "Pavel Tokmakov",
+   "Sergey Zakharov",
+   "Carl Vondrick"
+  ],
+  "year": "2023"
+ },
+ "2103.00020": {
+  "title": "Learning Transferable Visual Models From Natural Language Supervision",
+  "authors": [
+   "Alec Radford",
+   "Jong Wook Kim",
+   "Chris Hallacy",
+   "Aditya Ramesh",
+   "Gabriel Goh",
+   "Sandhini Agarwal",
+   "Girish Sastry",
+   "Amanda Askell",
+   "Pamela Mishkin",
+   "Jack Clark",
+   "Gretchen Krueger",
+   "Ilya Sutskever"
+  ],
+  "year": "2021"
+ },
+ "1605.04797": {
+  "title": "Thingi10K: A Dataset of 10,000 3D-Printing Models",
+  "authors": [
+   "Qingnan Zhou",
+   "Alec Jacobson"
+  ],
+  "year": "2016"
+ },
+ "2403.02234": {
+  "title": "3DTopia: Large Text-to-3D Generation Model with Hybrid Diffusion Priors",
+  "authors": [
+   "Fangzhou Hong",
+   "Jiaxiang Tang",
+   "Ziang Cao",
+   "Min Shi",
+   "Tong Wu",
+   "Zhaoxi Chen",
+   "Shuai Yang",
+   "Tengfei Wang",
+   "Liang Pan",
+   "Dahua Lin",
+   "Ziwei Liu"
+  ],
+  "year": "2024"
+ },
+ "2504.08125": {
+  "title": "Gen3DEval: Using vLLMs for Automatic Evaluation of Generated 3D Objects",
+  "authors": [
+   "Shalini Maiti",
+   "Lourdes Agapito",
+   "Filippos Kokkinos"
+  ],
+  "year": "2025"
+ },
+ "2212.08051": {
+  "title": "Objaverse: A Universe of Annotated 3D Objects",
+  "authors": [
+   "Matt Deitke",
+   "Dustin Schwenk",
+   "Jordi Salvador",
+   "Luca Weihs",
+   "Oscar Michel",
+   "Eli VanderBilt",
+   "Ludwig Schmidt",
+   "Kiana Ehsani",
+   "Aniruddha Kembhavi",
+   "Ali Farhadi"
+  ],
+  "year": "2022"
+ },
+ "2401.09050": {
+  "title": "Consistent3D: Towards Consistent High-Fidelity Text-to-3D Generation with Deterministic Sampling Prior",
+  "authors": [
+   "Zike Wu",
+   "Pan Zhou",
+   "Xuanyu Yi",
+   "Xiaoding Yuan",
+   "Hanwang Zhang"
+  ],
+  "year": "2024"
+ },
+ "2509.23841": {
+  "title": "Towards Fine-Grained Text-to-3D Quality Assessment: A Benchmark and A Two-Stage Rank-Learning Metric",
+  "authors": [
+   "Bingyang Cui",
+   "Yujie Zhang",
+   "Qi Yang",
+   "Zhu Li",
+   "Yiling Xu"
+  ],
+  "year": "2025"
+ },
+ "2304.12439": {
+  "title": "TextMesh: Generation of Realistic 3D Meshes From Text Prompts",
+  "authors": [
+   "Christina Tsalicoglou",
+   "Fabian Manhardt",
+   "Alessio Tonioni",
+   "Michael Niemeyer",
+   "Federico Tombari"
+  ],
+  "year": "2023"
+ },
+ "1905.03678": {
+  "title": "What Do Single-view 3D Reconstruction Networks Learn?",
+  "authors": [
+   "Maxim Tatarchenko",
+   "Stephan R. Richter",
+   "Ren\u00e9 Ranftl",
+   "Zhuwen Li",
+   "Vladlen Koltun",
+   "Thomas Brox"
+  ],
+  "year": "2019"
+ },
+ "2202.02397": {
+  "title": "Textured Mesh Quality Assessment: Large-Scale Dataset and Deep Learning-based Quality Metric",
+  "authors": [
+   "Yana Nehm\u00e9",
+   "Johanna Delanoy",
+   "Florent Dupont",
+   "Jean-Philippe Farrugia",
+   "Patrick Le Callet",
+   "Guillaume Lavou\u00e9"
+  ],
+  "year": "2022"
+ },
+ "2608.28534": {
+  "title": "InstructMesh: Selective Refinement of Generative 3D Models for Fabrication",
+  "authors": [
+   "Faraz Faruqi",
+   "Ahmed Katary",
+   "Demircan Tas",
+   "Theresa Hradilak",
+   "Ning Zhang",
+   "Jiaji Li",
+   "Fabian Manhardt",
+   "Martin Nisser",
+   "Vrushank Phadnis",
+   "Ruofei Du",
+   "Federico Tombari",
+   "Megan Hofmann",
+   "Stefanie Mueller"
+  ],
+  "year": "2026"
+ },
+ "2311.07885": {
+  "title": "One-2-3-45++: Fast Single Image to 3D Objects with Consistent Multi-View Generation and 3D Diffusion",
+  "authors": [
+   "Minghua Liu",
+   "Ruoxi Shi",
+   "Linghao Chen",
+   "Zhuoyang Zhang",
+   "Chao Xu",
+   "Xinyue Wei",
+   "Hansheng Chen",
+   "Chong Zeng",
+   "Jiayuan Gu",
+   "Hao Su"
+  ],
+  "year": "2023"
+ },
+ "2311.04400": {
+  "title": "LRM: Large Reconstruction Model for Single Image to 3D",
+  "authors": [
+   "Yicong Hong",
+   "Kai Zhang",
+   "Jiuxiang Gu",
+   "Sai Bi",
+   "Yang Zhou",
+   "Difan Liu",
+   "Feng Liu",
+   "Kalyan Sunkavalli",
+   "Trung Bui",
+   "Hao Tan"
+  ],
+  "year": "2023"
+ },
+ "2406.13897": {
+  "title": "CLAY: A Controllable Large-scale Generative Model for Creating High-quality 3D Assets",
+  "authors": [
+   "Longwen Zhang",
+   "Ziyu Wang",
+   "Qixuan Zhang",
+   "Qiwei Qiu",
+   "Anqi Pang",
+   "Haoran Jiang",
+   "Wei Yang",
+   "Lan Xu",
+   "Jingyi Yu"
+  ],
+  "year": "2024"
+ }
+}

@@ -1,0 +1,91 @@
+\section{Data and protocol}
+\label{sec:data}
+
+\subsection{Datasets and licences}
+Table~\ref{tab:datasets} lists the four corpora that were scored, their licences, and the cost of probing them.
+All runs were CPU-only, on an 8-core machine with about 6\,GB of usable memory and no GPU.
+Times are median and 95th percentile wall-clock seconds per mesh with four parallel workers, and they include decimation where it was applied.
+
+\begin{table}[t]
+  \centering
+  \caption{Datasets scored in this study. ``Probed OK'' counts meshes that returned a full feature vector. Peak RSS is the resident set of one worker. Runtimes use four parallel workers on an 8-core CPU and include decimation for MATE-3D and Hi3DBench. Hi3DBench contributes 3{,}060 probed meshes, of which 2{,}797 labelled meshes are analysed. Its labels are MLLM pseudo-labels.}
+  \label{tab:datasets}
+  \begingroup
+  \makeatletter
+  \let\paper@arrayparboxrestore\@arrayparboxrestore
+  \def\@arrayparboxrestore{\paper@arrayparboxrestore\raggedright}
+  \makeatother
+  \resizebox{\linewidth}{!}{\input{tables/tab_datasets.tex}}
+  \endgroup
+\end{table}
+% src: tables/tab_datasets.tex; results/runtime_summary.csv
+
+3D-DefectBench is released under CC BY-NC 4.0 \citep{zhao2026defectbench}.
+We used it for non-commercial research.
+The GLBs are not redistributed; the release accompanying this paper is code and per-asset probe statistics.
+The expert split has 129 assets labelled by two experts.
+The silver holdout has 549 assets with crowd majority-vote labels.
+One silver asset (identifier 609) is byte-identical to an expert asset and was excluded from every training and threshold fit, leaving 548 training assets.
+The primary test cells are those on which both experts agreed.
+That is the set for which the benchmark releases VLM predictions: 101 assets for fused/incomplete (17 positive), 88 for form/surface (51 positive) and 121 for extra geometry (6 positive).
+Missing parts (12 positives out of 104) and pose/placement (2 positives out of 125) are pre-registered negative controls, because a prompt-blind geometric probe has no access to the text that defines those failures.
+Texture defects were not scored.
+A secondary probe-only target marks an asset positive if either expert did.
+% src: analysis/PREREGISTRATION.md; results/main_comparison_expert_agreement.csv; results/RESULTS_milestone1.md
+
+MATE-3D is released under CC BY 4.0 \citep{zhang2025mate3d}.
+We used all 1{,}280 meshes: 160 prompts times eight generators (3DTopia, Consistent3D, DreamFusion, Latent-NeRF, Magic3D, One-2-3-45++, SJC and TextMesh) \citep{hong2024threedtopia,wu2024consistent3d,poole2022dreamfusion,metzer2022latentnerf,lin2023magic3d,liu2023one2345pp,wang2023sjc,tsalicoglou2023textmesh}.
+The target is the human geometry MOS.
+Every mesh probed successfully, both after decimation to 10{,}000 faces and, as a secondary run, on the raw meshes.
+% src: results/RESULTS_milestone2.md; results/mate3d/mate3d_dec10k_correlations.csv; results/runtime_summary.csv
+
+GSO scans are released under CC BY 4.0 \citep{downs2022gso}.
+We drew a seeded random subset of 120 objects from the Google Research Fuel collection, welded and decimated each scan, and attached the seven injected defects at three severities.
+That is 22 variants per object and 2{,}640 meshes, with no probe failures and no skipped shells.
+Hi3DBench is released under the MIT licence on its dataset card \citep{zhang2025hi3deval}.
+We probed 3{,}060 meshes (510 for each of SPAR3D, TRELLIS, TripoSR, InstantMesh and Hunyuan3D, and 510 for CRM, of which 247 are labelled) with no probe failures, and we analysed the 2{,}797 labelled meshes.
+Those object-level scores are MLLM pseudo-labels.
+The comparison is secondary evidence, not a human validation (Section~\ref{sec:hi3d}).
+% src: results/RESULTS_milestone2.md; results/RESULTS_milestone3.md; results/gso/gso_detection.csv; results/hi3dbench/hi3dbench_meta.json; results/runtime_summary.csv; tables/tab_datasets.tex; analysis/PREREGISTRATION_M3_hi3dbench.md
+
+\subsection{Pre-registration}
+The 3D-DefectBench analysis was committed before any expert-set score was computed (commit 024f7eb, 2026-09-27 16:22 UTC+8).
+The MATE-3D, GSO and ablation analysis was committed before those scores were computed (commit 78d6623, 16:44 UTC+8).
+The Hi3DBench plan was committed before those meshes were scored (commit c003104, 17:36 UTC+8).
+The analysis script was committed as b528343, also before scoring.
+The plans themselves state what had already been looked at: VLM files, used only to confirm that our MCC implementation matches the benchmark to three decimals; label counts; an engineering smoke test; and, for decimation, eight meshes of one MATE-3D prompt.
+No probe--label correlation entered the plans.
+Deviations are listed in Appendix~\ref{app:prereg}.
+Thresholds and coefficients were frozen before the external and injection studies.
+
+\subsection{Statistics}
+For 3D-DefectBench, 95\% intervals are asset-level percentile bootstraps with 10{,}000 resamples (seed 12345).
+Paired comparisons use the same resamples for the difference in MCC and an exact two-sided McNemar test on which predictor is correct \citep{mcnemar1947,efron1993bootstrap}.
+Benjamini--Hochberg adjustment at \(q = 0.05\) is applied to the 36 primary McNemar tests (12 VLMs times 3 defects) and, separately, to the negative-control tests \citep{benjamini1995fdr}.
+The pre-registered power note is that extra geometry, with six expert positives, is too small for a null result to be evidence of absence.
+McNemar tests accuracy, not MCC, and with rare positives it penalises a balanced classifier that over-predicts the positive class.
+
+For MATE-3D the primary estimand is the within-generator association: Pearson correlation of the within-generator percentile ranks of a predictor and of geometry MOS, which is a generator-stratified Spearman correlation.
+The other estimands are the pooled Spearman correlation, the mean within-prompt Kendall \(\tau\)-b across the eight generators, and the Pearson correlation after residualising global ranks on generator and prompt indicators.
+Intervals are prompt-cluster bootstraps with 10{,}000 resamples (seed 2026).
+The primary \(p\)-values permute MOS inside each generator (10{,}000 permutations, seed 2027).
+False-discovery control covers the nine pre-registered predictors.
+A predictor \emph{replicates} when the within-generator correlation is negative, its interval excludes 0 and its adjusted \(p\)-value is below 0.05.
+It is \emph{partial} when the within-generator criterion is not met but at least one of the other three estimands (pooled, within-prompt or two-way fixed effects) has an interval entirely below zero, and it \emph{fails} otherwise. A \emph{partial} verdict therefore does not establish a within-generator effect.
+The predicted sign is negative for every predictor: a larger geometric score was hypothesised to go with a worse rating.
+% src: analysis/PREREGISTRATION_M2.md
+
+For GSO, AUROC compares each injected variant with the 120 clean meshes of the same objects.
+Intervals are object-level bootstraps with 10{,}000 resamples (seed 2028).
+Sensitivity and specificity are reported at two operating points fixed in advance: a strict threshold of zero (``any of this signal''), and a calibrated threshold \(\tau_c\) equal to the 95th percentile of the same feature on the 200 silver-holdout assets whose crowd vote was negative for all five geometry defects.
+The full cross-talk matrix, every check against every injected defect, is reported rather than only the target cells.
+Ablation intervals use 2{,}000 bootstrap resamples.
+Family ablations and single-feature rules were not used to choose the model that is tested above.
+% src: analysis/PREREGISTRATION.md; analysis/PREREGISTRATION_M2.md; results/gso/tau_calibrated.json; results/RESULTS_milestone2.md
+
+Hi3DBench uses the same four estimands and the same replication rule, applied to MLLM pseudo-labels rather than to human ratings.
+Intervals are prompt-cluster bootstraps with 10{,}000 resamples for the pooled, within-generator and within-prompt estimands, and 2{,}000 resamples for the two-way fixed effect (seed 2029).
+The primary \(p\)-values permute the pseudo-label inside each generator (10{,}000 permutations, seed 2030).
+False-discovery control covers the four pre-registered predictors.
+A replication in that section is agreement with an automated judge.
+% src: analysis/PREREGISTRATION_M3_hi3dbench.md; results/hi3dbench/hi3dbench_meta.json; results/RESULTS_milestone3.md

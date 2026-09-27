@@ -1,0 +1,5 @@
+dataset,n_meshes,n_ok,labels,licence,sec_median,sec_p95,rss_median_mb,rss_max_mb,faces_median
+3D-DefectBench (expert + silver),678,678,expert + crowd defect labels,CC BY-NC 4.0 (non-commercial research use; no redistribution of GLBs),0.667,0.8352999999999999,158.0,163.2,8119.0
+MATE-3D,1280,1280,human MOS (geometry),CC BY 4.0,1.6145,3.1968999999999994,180.9,257.9,10000.0
+GSO + injected defects,2640,2640,known injected defect,CC BY 4.0 (scans); injections ours,0.903,1.529,164.5,169.6,9519.5
+Hi3DBench (secondary),3060,3060,"MLLM pseudo-labels (geometry plausibility); 2,797 labelled meshes analysed",MIT (HF dataset card),1.3585,3.018099999999999,182.4,344.6,10000.0

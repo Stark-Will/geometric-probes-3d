@@ -1,0 +1,48 @@
+\section{Limitations}
+\label{sec:limit}
+
+The expert-agreement cells are small, and they are a selected subset of the expert split: both annotators agreed.
+Extra geometry has six positives, pose/placement has two, and the paired tests against strong VLMs were underpowered.
+We therefore treat non-significance as absence of evidence.
+A larger expert set could move the mid-pack MCC in either direction.
+The secondary union target, which scores all 129 expert assets, is more prevalent and is not paired with VLM votes, because those votes were not released for disagreement cells.
+
+3D-DefectBench contains two generators.
+The form/surface result is entangled with that binary identity, which is why the generator-only control and the within-generator AUROCs are part of the primary report rather than a footnote.
+Crowd labels, especially for form/surface, were a weak training signal.
+Fitting the same regression on the expert cells did not fix this: there are not enough agreed labels, and extra geometry got worse.
+
+The VLM side is one released configuration, not a new sweep of views, prompts or renderers.
+3D-DefectBench already studied that sensitivity; we used the published votes so that the comparison would cost no API calls and would match the authors' MCCs.
+We did not measure whether a different VLM pipeline would agree more or less with the probes.
+Binary VLM AUROC is balanced accuracy.
+MCC is the comparison that does not depend on that choice.
+
+The injections are simpler than generator failures.
+Each operator adds one kind of damage to a scanned household object, on a mesh that has already been welded and decimated.
+Generated meshes are dirty in several of these ways at once, which is what the cross-talk matrix and the calibrated thresholds describe, and they are not a sample of GSO.
+Clean-scan specificity will not transfer to a corpus in which every mesh is a generator output.
+Conversely, AUROC against clean scans is an easier detection task than ranking two generated meshes.
+Decimation can change thickness and intersection counts.
+The undecimated MATE-3D run is the check we have, and it did not change the verdicts; we did not repeat the injection study without decimation.
+
+Ray probes depend on a fixed sample of 20{,}000 points and on Embree, and self-intersection depends on PyMeshLab.
+We verified that installing the system libraries PyMeshLab needs did not change probe outputs, but we do not claim bit-identity across library versions we did not run.
+The classifier is linear and was not tuned.
+A more flexible model might fit the silver labels more tightly; the silver form/surface labels look too noisy for that to be the binding constraint, and we did not test it.
+
+Hi3DBench is secondary evidence only.
+
+Its labels are MLLM pseudo-labels from the Hi3DEval M$^{2}$AP pipeline, not human ratings.
+The within-generator correlations with Geometry Plausibility have absolute value at most 0.111.
+They are heterogeneous across generators and not robust once prompt and generator means are removed.
+Unique3D was excluded before scoring.
+The reversal on the geometric-detail score means a validity gate fitted to Geometry Plausibility can punish complexity.
+% src: results/RESULTS_milestone3.md; results/hi3dbench/hi3dbench_correlations.csv; analysis/PREREGISTRATION_M3_hi3dbench.md
+
+DB-3DME could not be probed because the release we used contains renders rather than meshes.
+3DGen-Bench was left out because the files are gated.
+Texture, material and prompt alignment are out of scope for a geometry-only probe.
+The work is a single-author, CPU-only study on public data.
+% src: results/RESULTS_milestone1.md; results/RESULTS_milestone2.md; results/RESULTS_milestone3.md; analysis/PREREGISTRATION.md; analysis/PREREGISTRATION_M3_hi3dbench.md
+

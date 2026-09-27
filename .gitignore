@@ -1,0 +1,26 @@
+.venv/
+__pycache__/
+.pytest_cache/
+*.part
+# Third-party data are downloaded by scripts/dl_*.sh and are NOT redistributed here
+data/3d-defectbench/
+data/hi3dbench/
+data/3dgen-bench/
+data/mate-3d/*.zip
+data/mate-3d/meshes/
+data/gso/zips/
+data/gso/objs/
+results/gso_meshes/
+results/probes/*/
+logs/*.log
+paper/figures/tmp/
+paper/*.aux
+paper/*.log
+paper/*.out
+paper/*.blg
+paper/*.toc
+*.glb
+*.gltf
+*.obj
+*.ply
+*.stl

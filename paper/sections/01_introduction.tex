@@ -1,0 +1,36 @@
+\section{Introduction}
+\label{sec:intro}
+
+Text-to-3D and image-to-3D generators now produce meshes that are scored, in most recent benchmarks, by people or by vision-language models (VLMs) looking at renders \citep{poole2022dreamfusion,lin2023magic3d,wu2024gpteval3d,zhang2025mate3d,zhao2026defectbench,zhang2025hi3deval}.
+Those judgements answer a perceptual question: does the asset look complete, coherent and faithful to the prompt?
+A second question is geometric.
+Does the mesh contain holes, disconnected fragments, self-intersections, internal shells or walls thinner than a stated tolerance?
+Graphics has long treated that second question as a repair and printability problem \citep{attene2010meshfix,zhou2016thingi10k,garland1997qem}.
+Fabrication studies of generative meshes still record defects by hand and leave automatic detection as future work \citep{faruqi2026instructmesh}.
+
+The two questions are easy to conflate, because several benchmarks describe perceptual failures with geometric words (``fused'', ``incomplete'', ``extra geometry'', ``bad surface'').
+3D-DefectBench makes the conflation testable.
+It releases meshes, expert and crowd labels for fine-grained defects, and the predictions of 12 VLMs, and it does not include a mesh-geometric baseline \citep{zhao2026defectbench}.
+We used that release, together with human geometry ratings from MATE-3D \citep{zhang2025mate3d} and synthetic defects injected into Google Scanned Objects (GSO) scans \citep{downs2022gso}, to measure what a frozen family of deterministic probes can and cannot see.
+
+The working distinction, which the measurements support, is between \emph{geometric validity} and \emph{perceived quality}.
+Validity here means a pre-declared, scale-normalised property of the triangle mesh: boundary length, component structure, self-intersection, hidden surface, local thickness, or dihedral roughness.
+Perceived quality means an expert vote, a crowd vote, or a human geometry rating.
+A valid mesh can still look wrong, and a mesh that raters call clean can still fail a strict geometric check.
+The probes are cheap, deterministic and fully specified.
+They are complements to perceptual and VLM judges, useful as validity gates and as a way to expose generator confounds.
+On the expert cells they are comparable to mid-tier VLM judges, and they do not replace the strongest ones.
+
+\paragraph{Contributions.}
+\begin{enumerate}
+  \item A documented CPU-only probe suite (Section~\ref{sec:method}) and a pre-registered comparison with the 12 VLM judges released by 3D-DefectBench, plus a face-count control and a generator-identity control.
+  We did not query any VLM.
+  \item An external check on MATE-3D human geometry ratings that separates pooled, within-generator, within-prompt and two-way fixed-effect estimands, so that a generator confound is visible rather than absorbed into a single correlation.
+  \item A controlled injection study on 120 GSO scans that reports detection, cross-talk, and the gap between a strict zero threshold and a threshold calibrated on generated assets that crowd workers called defect-free.
+  \item Family ablations and both a training-free and a learned fusion with VLM votes, including the negative and null results: the form/surface association is largely a generator effect, topology-only performance on the expert cells is a test-set observation, and the conjunction rule is directionally consistent but rarely significant after correction.
+  \item A pre-registered secondary analysis of Hi3DBench (Section~\ref{sec:hi3d}).
+  The scores are MLLM pseudo-labels from the Hi3DEval multi-agent pipeline, not human ratings \citep{zhang2025hi3deval}.
+  Within-generator correlations with Geometry Plausibility meet the pre-registered sign but are small (absolute value at most 0.111), are not robust to prompt adjustment, and reverse for a geometric-detail score.
+  Agreement with that automated judge is not human validation.
+  % src: results/RESULTS_milestone3.md; results/hi3dbench/hi3dbench_correlations.csv
+\end{enumerate}
