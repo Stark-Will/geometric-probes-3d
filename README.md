@@ -1,10 +1,12 @@
 # geometric-probes-3d
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22995915.svg)](https://doi.org/10.5281/zenodo.22995915)
+
 **Deterministic, CPU-only mesh probes for generated 3D assets — and a pre-registered study of what they can and cannot measure.**
 
 Code, configs, per-asset statistics and figures for the paper
 
-> Miles Carter. *Geometric validity is not perceptual quality: what deterministic probes can and cannot measure in generated 3D assets.* 2026. PDF: [`paper/main.pdf`](paper/main.pdf) (26 pages) · v1.0 Release: see *Releases*.
+> Miles Carter. *Geometric validity is not perceptual quality: what deterministic probes can and cannot measure in generated 3D assets.* 2026. PDF: [`paper/main.pdf`](paper/main.pdf) (26 pages) · Zenodo: [doi:10.5281/zenodo.22995915](https://doi.org/10.5281/zenodo.22995915) · v1.0 Release: see *Releases*.
 
 ## TL;DR
 
@@ -64,14 +66,17 @@ See [`data/LICENSES.md`](data/LICENSES.md). In short: **no 3D-DefectBench meshes
 
 ## Cite
 
-See `CITATION.cff`.
+Preprint on Zenodo: [https://doi.org/10.5281/zenodo.22995915](https://doi.org/10.5281/zenodo.22995915) (record: <https://zenodo.org/records/22995915>; all versions: [10.5281/zenodo.22995914](https://doi.org/10.5281/zenodo.22995914)). See also `CITATION.cff`.
 
 ```bibtex
 @misc{carter2026geomprobes,
-  author = {Carter, Miles},
-  title  = {Geometric validity is not perceptual quality: what deterministic probes can and cannot measure in generated 3D assets},
-  year   = {2026},
-  note   = {Code: https://github.com/mart-openclaw/geometric-probes-3d}
+  author    = {Carter, Miles},
+  title     = {Geometric validity is not perceptual quality: what deterministic probes can and cannot measure in generated 3D assets},
+  year      = {2026},
+  publisher = {Zenodo},
+  doi       = {10.5281/zenodo.22995915},
+  url       = {https://zenodo.org/records/22995915},
+  note      = {Code: https://github.com/mart-openclaw/geometric-probes-3d}
 }
 ```
 
