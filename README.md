@@ -76,7 +76,7 @@ Preprint on Zenodo: [https://doi.org/10.5281/zenodo.22995915](https://doi.org/10
   publisher = {Zenodo},
   doi       = {10.5281/zenodo.22995915},
   url       = {https://zenodo.org/records/22995915},
-  note      = {Code: https://github.com/mart-openclaw/geometric-probes-3d}
+  note      = {Code: https://github.com/Stark-Will/geometric-probes-3d}
 }
 ```
 
