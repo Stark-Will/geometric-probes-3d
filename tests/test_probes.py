@@ -1,9 +1,11 @@
 """Unit tests of geometric probes on synthetic meshes with known ground truth."""
+import os
+
 import numpy as np
 import trimesh
 import pytest
 
-from geomcheck.probes import compute_all
+from geomcheck.probes import compute_all, decimation_available
 
 
 def sphere(r=1.0, center=(0, 0, 0), sub=3):
@@ -136,6 +138,18 @@ def test_determinism():
     assert a == b
 
 
+def test_decimation_unavailable_raises_actionable_error(monkeypatch):
+    """Without the PyMeshLab meshing plugin, decimate() must explain the fix, not AttributeError."""
+    import geomcheck.probes as P
+    monkeypatch.setattr(P, "_DECIMATION_FILTER", "no_such_filter_for_test")
+    with pytest.raises(P.PyMeshLabFilterUnavailable, match="libOpenGL"):
+        compute_all(sphere(sub=6), decimate_to=10000)
+
+
+# Skipped only when the system library is missing; CI sets GEOMCHECK_REQUIRE_DECIMATION=1 so a
+# missing plugin fails loudly there instead of being skipped.
+@pytest.mark.skipif(not decimation_available() and not os.environ.get("GEOMCHECK_REQUIRE_DECIMATION"),
+                    reason="PyMeshLab meshing plugin not loaded (install system libOpenGL.so.0, e.g. apt libopengl0)")
 def test_decimation_matches_target_and_keeps_clean_sphere_clean():
     r = compute_all(sphere(sub=6), decimate_to=10000)
     assert r["orig_n_faces"] == 81920 and 9000 <= r["n_faces"] <= 10000

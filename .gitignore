@@ -24,3 +24,8 @@ paper/*.toc
 *.obj
 *.ply
 *.stl
+# packaging / docs build outputs
+build/
+dist/
+*.egg-info/
+site/

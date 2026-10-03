@@ -1,0 +1,9 @@
+include LICENSE README_PYPI.md CITATION.cff
+recursive-include tests *.py
+prune paper
+prune results
+prune data
+prune analysis
+prune scripts
+prune logs
+prune docs

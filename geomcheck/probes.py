@@ -110,6 +110,44 @@ def _sample_surface(V, F, area, n, seed):
     return p, fi
 
 
+# ----------------------------------------------------------------------------- PyMeshLab feature detection
+# PyMeshLab exposes filters only for the plugins it could load at import time. On Linux the
+# plugin that provides quadric edge-collapse decimation (libfilter_meshing.so) links against the
+# system OpenGL dispatch library libOpenGL.so.0; if that library is missing the plugin is skipped
+# silently and the filter simply does not exist on MeshSet. Detect this instead of failing with
+# an opaque AttributeError.
+_DECIMATION_FILTER = "meshing_decimation_quadric_edge_collapse"
+_SELF_INTERSECTION_FILTER = "compute_selection_by_self_intersections_per_face"
+
+
+class PyMeshLabFilterUnavailable(RuntimeError):
+    """A PyMeshLab filter needed by a probe is not available in this installation."""
+
+
+def pymeshlab_has_filter(name: str) -> bool:
+    """True if PyMeshLab is importable and exposes filter ``name`` (i.e. its plugin loaded)."""
+    try:
+        import pymeshlab
+    except ImportError:
+        return False
+    return hasattr(pymeshlab.MeshSet(), name)
+
+
+def decimation_available() -> bool:
+    """True if :func:`decimate` (and therefore ``compute_all(..., decimate_to=N)``) can run."""
+    return pymeshlab_has_filter(_DECIMATION_FILTER)
+
+
+def _require_filter(ms, name: str) -> None:
+    if not hasattr(ms, name):
+        raise PyMeshLabFilterUnavailable(
+            f"PyMeshLab filter '{name}' is not available: the PyMeshLab plugin that provides it "
+            "failed to load (PyMeshLab prints 'Unable to load the following plugins' on import). "
+            "On Linux this is usually the missing system library libOpenGL.so.0; install it, e.g. "
+            "'sudo apt-get install libopengl0' (Debian/Ubuntu) or 'sudo dnf install "
+            "libglvnd-opengl' (Fedora/RHEL), then restart Python. No GPU or display is needed.")
+
+
 # ----------------------------------------------------------------------------- probes
 def topology_probes(V, F, area, e):
     out = {}
@@ -221,6 +259,7 @@ def self_intersection_probe(V, F, area):
     """Fraction of faces (and area) that intersect other faces of the same mesh (PyMeshLab)."""
     import pymeshlab
     ms = pymeshlab.MeshSet()
+    _require_filter(ms, _SELF_INTERSECTION_FILTER)
     ms.add_mesh(pymeshlab.Mesh(vertex_matrix=V.astype(np.float64), face_matrix=F.astype(np.int32)))
     ms.compute_selection_by_self_intersections_per_face()
     sel = np.asarray(ms.current_mesh().face_selection_array(), dtype=bool)
@@ -294,6 +333,7 @@ def decimate(V, F, target_faces: int):
     decimation artefacts (holes/self-intersections) that the probes would otherwise measure."""
     import pymeshlab
     ms = pymeshlab.MeshSet()
+    _require_filter(ms, _DECIMATION_FILTER)
     ms.add_mesh(pymeshlab.Mesh(vertex_matrix=V.astype(np.float64), face_matrix=F.astype(np.int32)))
     ms.meshing_decimation_quadric_edge_collapse(targetfacenum=int(target_faces), preservetopology=True,
                                                 preserveboundary=True, preservenormal=True,
