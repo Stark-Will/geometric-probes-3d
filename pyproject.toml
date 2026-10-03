@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools>=77", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "geomcheck"
+version = "0.1.0"
+description = "Deterministic, CPU-only geometric validity probes for (generated) triangle meshes"
+readme = "README_PYPI.md"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Miles Carter", email = "support@modelfy.art" }]
+requires-python = ">=3.10"
+keywords = ["3d", "mesh", "mesh-quality", "geometry", "trimesh", "pymeshlab", "generative-3d", "validation"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Topic :: Multimedia :: Graphics :: 3D Modeling",
+    "Topic :: Scientific/Engineering",
+]
+dependencies = [
+    "numpy>=1.24",
+    "scipy>=1.10",
+    "trimesh>=4.0",
+    "pymeshlab>=2023.12",
+    "embreex>=2.17.7",
+]
+
+[project.optional-dependencies]
+viz = ["matplotlib>=3.7"]
+test = ["pytest>=7"]
+docs = ["mkdocs>=1.6,<2", "mkdocs-material>=9.5,<10"]
+
+[project.urls]
+Homepage = "https://modelfy.art"
+Source = "https://github.com/Stark-Will/geometric-probes-3d"
+Documentation = "https://geomcheck.readthedocs.io"
+Issues = "https://github.com/Stark-Will/geometric-probes-3d/issues"
+
+[tool.setuptools]
+packages = ["geomcheck"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

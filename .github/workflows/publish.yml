@@ -1,0 +1,61 @@
+# Publish geomcheck to PyPI when a GitHub release is published.
+# Uses PyPI trusted publishing (OIDC): no API token is stored anywhere.
+# One-time setup on pypi.org: add a (pending) trusted publisher with
+#   owner: Stark-Will, repository: geometric-probes-3d, workflow: publish.yml, environment: pypi
+name: publish
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      # PyMeshLab's decimation plugin links libOpenGL.so.0 (no GPU/display needed).
+      - run: sudo apt-get update && sudo apt-get install -y libopengl0
+      - run: pip install ".[test]"
+      - name: Tests
+        env:
+          GEOMCHECK_REQUIRE_DECIMATION: "1"
+        run: python -m pytest -q
+
+  build:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - run: pip install build twine
+      - run: python -m build
+      - run: twine check --strict dist/*
+      - uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist/
+
+  pypi:
+    if: github.event_name == 'release'
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: pypi
+      url: https://pypi.org/project/geomcheck/
+    permissions:
+      id-token: write
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: dist/
+      - uses: pypa/gh-action-pypi-publish@release/v1

@@ -1,0 +1,61 @@
+site_name: geomcheck
+site_description: Deterministic, CPU-only geometric validity probes for generated 3D meshes
+site_author: Miles Carter
+# Canonical URL is Read the Docs; the GitHub Pages mirror overrides it at build time (see .github/workflows/docs.yml).
+site_url: !ENV [SITE_URL, "https://geomcheck.readthedocs.io/en/latest/"]
+repo_url: https://github.com/Stark-Will/geometric-probes-3d
+repo_name: Stark-Will/geometric-probes-3d
+edit_uri: edit/main/docs/
+copyright: Copyright &copy; 2026 Miles Carter &middot; code MIT, paper text CC BY 4.0
+
+docs_dir: docs
+exclude_docs: |
+  showcase/
+  *.pdf
+  requirements.txt
+
+theme:
+  name: material
+  features:
+    - content.code.copy
+    - navigation.footer
+    - search.suggest
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+nav:
+  - Home: index.md
+  - Quickstart: quickstart.md
+  - Probe reference: probes.md
+  - Limitations: limitations.md
+  - Citation: citation.md
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.superfences
+
+validation:
+  nav:
+    omitted_files: warn
+    not_found: warn
+  links:
+    not_found: warn
+    anchors: warn
+    absolute_links: info
+    unrecognized_links: warn
